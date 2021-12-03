@@ -37,7 +37,7 @@ class Main {
   constructor() {
     const random = this.randomize();
     const product = this.chooseProduct(random).createProduct();
-    console.log(product.showInfo());
+    product.showInfo();
   }
 
   private randomize(): boolean {
