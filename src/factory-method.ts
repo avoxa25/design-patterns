@@ -2,19 +2,35 @@ abstract class Product {
   name: string;
   options: string[];
 
+  constructor() {
+    this.name = '';
+    this.options = [''];
+  }
+
   public showInfo(): void {
     console.log(`Product: ${this.name}, options: ${this.options.join(', ')}`);
   }
 }
 
 class Chocolate extends Product {
-  public name = 'Alenka';
-  public options = ['90% cacao', 'made in Russia', 'export only'];
-}
+  public name: string;
+  public options: string[];
 
+  constructor() {
+    super();
+    this.name = 'Alenka';
+    this.options = ['90% cacao', 'made in Russia', 'export only'];
+  }
+}
 class PlayStation extends Product {
-  public name = 'PlayStation 5';
-  public options = ['digital version', 'made in China', 'for EU only'];
+  public name: string;
+  public options: string[];
+
+  constructor() {
+    super();
+    this.name = 'PlayStation 5';
+    this.options = ['digital version', 'made in China', 'for EU only'];
+  }
 }
 
 abstract class Creator {
@@ -45,7 +61,7 @@ class Main {
   }
 
   private chooseProduct(arg: boolean): Creator {
-    return arg? new ChocolateCreator(): new PlayStationCreator();
+    return arg ? new ChocolateCreator() : new PlayStationCreator();
   }
 }
 
